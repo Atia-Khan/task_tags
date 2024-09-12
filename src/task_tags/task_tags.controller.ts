@@ -10,13 +10,13 @@ export class TaskTagsController {
   constructor(private readonly taskTagsService: TaskTagsService) {}
 
   // POST method to create a new task tag
-  @Post('/add')
+  @Post()
   async create(@Body() createTaskTagDto: TaskTagsDto): Promise<TaskTag> {
     return this.taskTagsService.create(createTaskTagDto);
   }
 
   // GET method to retrieve all task tags
-  @Get('/get')
+  @Get()
   async findAll(): Promise<TaskTag[]> {
     return this.taskTagsService.findAll();
   }
